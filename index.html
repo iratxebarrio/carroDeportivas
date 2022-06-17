@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="header">
+        <div class="header__header">
+          <div class="header__logo">
+            <img src="./img/logo.svg" alt="" class="header__logo__img" />
+          </div>
+          <div class="header__containerNav">
+            <nav class="header__containerNav__nav">
+              <ul>
+                <li>Collections</li>
+                <li>Men</li>
+                <li>Women</li>
+                <li>About</li>
+                <li>Contact</li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+        <div class="header__iconos">
+          <div class="header__iconos__carroContainer">
+            <img
+              id="img-carrito"
+              class="header__iconos__carro"
+              
+              src="./img/icon-cart.svg"
+              alt=""
+            />
+            <div class="carrito" id="carrito">
+              <p id="#lista-carrito">La cesta está vacía.</p>
+             
+              <!-- <a href="#" id='vaciar-carrito' class="vaciarCarrito">Vaciar Cesta</a> -->
+            </div>
+          </div>
+          <div>
+            <img
+              class="header__iconos__avatar"
+              src="./img/image-avatar.png"
+              alt=""
+            />
+          </div>
+        </div>
+      </div>
+      <hr class="hrPrincipal" />
+    </header>
+    <main>
+      <div class="mainContainer">
+        <div class="imgColumn">
+          <div class="imgPrincipal">
+            <div class="imgPrincipal__flechaIzq">
+              <p class="botonIzq" onclick="izquierda()"> < </button>
+            </div>
+            <div class="imgPrincipal__flechaDcha">
+              <p class="botonDcha" onclick="derecha()">></p>
+            </div>
+            <div class="imgPrincipal__imgPrin">
+              
+              <img  class="imgPrincipal__img" src="./img/image-product-1.jpg" alt=""/>
+
+            </div>
+          </div>
+          <div class="imgCarousel">
+            <img
+              class="imgCarousel__img" 
+              onclick="setImagenPrincipal(0)"
+              id="img0" 
+              src="./img/image-product-1-thumbnail.jpg"
+              alt=""
+            />
+            <img
+              class="imgCarousel__img" 
+              onclick="setImagenPrincipal(1)"
+              id="img1" 
+              src="./img/image-product-2-thumbnail.jpg"
+              alt=""
+            />
+            <img
+              class="imgCarousel__img"
+              onclick="setImagenPrincipal(2)"
+              id="img2" 
+              src="./img/image-product-3-thumbnail.jpg"
+              alt=""
+            />
+            <img
+              class="imgCarousel__img"
+              onclick="setImagenPrincipal(3)"
+              id="img3" 
+              src="./img/image-product-4-thumbnail.jpg"
+              alt=""
+            />
+          </div>
+        </div>
+        <div class="textContainer">
+          <p class="textContainer__title">sneaker company</p>
+          <h1>Fall Limited Edition Sneakers</h1>
+          <p class="textContainer__texto">
+            These low-profile sneakers are your perfect casual wear companion.
+            Featuring a durable rubber outer sole, they'll withstand everything
+            the weather can offer.
+          </p>
+          <div class="textContainer__precio">
+            <div>
+              <p class="textContainer__coste">$125.00</p>
+            </div>
+            <div>
+              <p class="textContainer__porcentaje">50%</p>
+            </div>
+          </div>
+          <p class="textContainer__textoTachado">$250.00</p>
+          <div class="textContainer__buttonContainer">
+            <div class="textContainer__buttonContainer__icon">
+              <div
+                class="textContainer__buttonContainer__icon__divImg menosImg"
+                onclick="eliminarProducto()"
+              >
+                <img src="./img/icon-minus.svg" alt="" />
+              </div>
+              <p class="textContainer__buttonContainer__icon__p"></p>
+              <div class="textContainer__buttonContainer__icon__divImg"
+              onclick="anyadirProducto()">
+                <img src="./img/icon-plus.svg" alt="" />
+              </div>
+            </div>
+            <button id="anyadirProducto" class="textContainer__buttonContainer__boton" onclick="anyadirCarrito()" >
+              <img src="./img/icon-cart.svg" alt="" />
+              <p class="textContainer__buttonContainer__boton__p" >
+                Add to cart
+              </p>
+            </button>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script src="index.js"></script>
+  </body>
+</html>

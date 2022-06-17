@@ -1,0 +1,290 @@
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@200;300;400&display=swap');
+
+body {
+    font-family: 'Kumbh Sans', sans-serif;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 10px;
+}
+
+.hrPrincipal {
+    border: 0.5px solid grey;
+    width: 85%;
+    margin: auto;
+    
+}
+
+
+.header__containerNav {
+   margin: 10px;
+}
+
+ul {
+    display: flex;
+    list-style: none;
+   
+}
+
+li {
+    margin: 2px 15px 0 0;
+}
+
+.header__header {
+    display: flex;
+    justify-content: space-around;
+    color: #B9B9B9;
+    margin-left: 222px;
+}
+
+.header__iconos {
+    margin-right: 137px;
+    text-align: center;
+    align-items: center;
+    display: flex;
+    
+}
+
+.header__iconos__carro {
+    margin-right: 40px;
+}
+
+.header__iconos__avatar {
+    width: 60px;
+}
+
+.header__logo {
+margin-top: 20px;
+}
+
+.mainContainer {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    margin-top: 100px;
+}
+
+.imgPrincipal {
+    text-align: center;
+    position: relative;
+}
+
+.imgPrincipal__flechaIzq,.imgPrincipal__flechaDcha {
+    position: absolute;
+    top: 50%;
+    width: 50px;
+    height: 50px;
+    background-color: gray;
+    transform: translateY(-50%);
+    border-radius: 50%;
+    text-align: center;
+    font-weight: bold;
+    color:white
+}
+
+.imgPrincipal__flechaIzq {
+    left: 205px;
+}
+
+.imgPrincipal__flechaDcha {
+    right: 205px;
+}
+
+.imgPrincipal__img {
+    width: 480px;
+    height: auto;
+    border-radius: 20px;
+    /* background-size: cover;
+    background-position: 50%;
+    background-color: red; */
+}
+
+.imgColumn {
+    display: grid;
+    grid-template-columns: 100%;
+}
+
+.imgCarousel {
+    text-align: center;
+    margin-top: 10px;
+    margin-left: 10px;
+   
+}
+
+.imgCarousel > img {
+    width: 105px;
+    border-radius: 10px;
+    margin-right: 15px;
+}
+
+.textContainer__title {
+    text-transform: uppercase;
+    color: hsl(26, 100%, 55%);
+    font-weight: bold;
+
+
+}
+
+h1 {
+    font-size: 40px;
+    width: 400px;
+    font-weight: bold;
+
+}
+.textContainer__texto {
+    color: hsl(219, 9%, 45%);
+    text-align: justify;
+    width: 500px;
+    line-height:25px
+}
+
+.textContainer__precio {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    height: 37px;
+    
+}
+
+.textContainer__coste {
+    font-size: 30px;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.textContainer__porcentaje {
+    color: hsl(26, 100%, 55%);
+    font-weight: bold;
+    background-color: hsl(25, 100%, 94%);
+    font-size: 15px;
+    text-align: center;
+    padding: 5px;
+
+}
+
+.textContainer__textoTachado {
+    text-decoration: line-through;
+    color: hsl(219, 9%, 45%);
+    margin-bottom: 20px;
+}
+
+.textContainer__buttonContainer {
+    display: flex;
+    width: 400px;
+    
+}
+
+
+
+.textContainer__buttonContainer__boton {
+    background-color: hsl(26, 100%, 55%);
+    color: white;
+    width: 250px;
+    height: 50px;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: space-evenly;
+    border: none;
+    border-radius: 15px;
+   
+}
+
+.textContainer__buttonContainer__boton__p {
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.textContainer__buttonContainer__icon {
+    background-color:hsl(223, 64%, 98%) ;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    width: 200px;
+    margin-right: 15px;
+}
+
+.textContainer__buttonContainer__icon__divImg {
+    width: 50px;
+}
+
+.textContainer__buttonContainer__icon__p  {
+    width: 70px;
+}
+
+.menosImg {
+    margin-bottom: 5px;
+}
+
+.header__iconos__carroContainer {
+  
+    position: relative;
+}
+
+#carrito {
+    display: none;
+    
+}
+
+.header__iconos__carroContainer:hover #carrito {
+    display: block;
+    position: absolute;
+    right:0;
+    top:100%;
+    background-color: white;
+    min-height: 200px;
+    min-width: 350px;
+    box-shadow: 0 10px 20px 5px grey;
+    
+}
+
+
+
+.costeTotal {
+    font-weight: bold;
+}
+
+.containerCesta {
+    display: flex;
+    align-items: center;
+    margin: 0 10px;
+    justify-content: center;
+   
+}
+
+.imgzapatillasCesta {
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
+    margin-right: 10px;
+}
+
+.deleteCesta {
+    width: 20px;
+    height: 20px;
+    margin-left: 10px;
+}
+
+.textoCarrito, .costeProductoCesta {
+    font-size: 15px;
+    color: hsl(219, 9%, 45%);
+}
+
+.textoCosteCesta {
+    font-weight: bold;
+    justify-content: start;
+} 
+
+.hrCesta {
+    margin-bottom: 5px;
+    border: 0.5px solid grey;
+
+}
+
+
+.prueba {
+    border: 2px solid black;
+    opacity: 0.5;
+}
