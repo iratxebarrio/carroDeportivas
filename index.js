@@ -8,7 +8,7 @@ let img = {
   3: "./img/image-product-4.jpg"
 }
 
-let imgPequeña = [
+let smallImg = [
 
    "./img/image-product-1-thumbnail.jpg",
    "./img/image-product-2-thumbnail.jpg",
@@ -17,39 +17,37 @@ let imgPequeña = [
 ]
 
 
-let posicion = 0;
-let posicionCuadro = 0;
+let position = 0;
+let boxPosition = 0;
 
 //las dos lineas de abajo solo se ejecutan al recargar la página
 //en la variable guardamos el elemento html del id img0
-let  imgCuadroAuxiliar = document.getElementById('img0');
+let  imgBoxCarousel = document.getElementById('img0');
 //le damos una clase a lo guardado previamente en la variable
-imgCuadroAuxiliar.classList.add('prueba');
+imgBoxCarousel.classList.add('imgSmallCarousel');
 
 
-
-
-function izquierda() {
-  if (posicion == 0) {
-    posicion = 3;
+function left() {
+  if (position == 0) {
+    position = 3;
   } else {
-    posicion = posicion - 1;
+    position = position - 1;
   }
-  setImagenPrincipal(posicion)
-  // document.querySelector('.imgPrincipal__img').src  = `${img[posicion]}`;
+  setMainImg(position)
+  // document.querySelector('.imgPrincipal__img').src  = `${img[position]}`;
 
 }
 
-function derecha() {
+function right() {
   
-  if (posicion == 3) {
-    posicion = 0;
+  if (position == 3) {
+    position = 0;
   } else {
-    posicion++;
+    position++;
   }
-  setImagenPrincipal(posicion)
+  setMainImg(position)
 
-  // document.querySelector('.imgPrincipal__img').src  = `${img[posicion]}`;
+  // document.querySelector('.imgPrincipal__img').src  = `${img[position]}`;
 }
 
 //SI HACEMOS INNERHTML HACE QUE LA PAGINA SE REFRESQUE Y POR ESO SE REFRESCABAN LAS IMAGENES LA PRIMERA VEZ QUE HACIAMOS CLICK. ES MEJOR PONER EL CODIGO EN HTML Y LUEGO EN JS SOLO MODIFICAR TENIENDO UNA POR DEFECTO, EN VEZ DE CREAR UN NUEVO ELEMENTO Y AÑADIRLO QUE ESO SUPONE QUE SE REFRESQUE LA PAGINA.
@@ -58,17 +56,17 @@ function derecha() {
 
 
 // CAMBIO DE IMAGENES
-function setImagenPrincipal(imagen){
-  posicion = imagen
-  //Trae un parametro, entonces en el imgDiv se cambia la imagen principal por el objeto img con el nº que trae desde el onclick, que es la clave en el objeto
- document.querySelector('.imgPrincipal__img').src  = `${img[imagen]}`;
+function setMainImg(image){
+  position = image
+  //Trae un parametro, entonces en el imgDiv se cambia la image principal por el objeto img con el nº que trae desde el onclick, que es la clave en el objeto
+ document.querySelector('.imgPrincipal__img').src  = `${img[image]}`;
 
-//elimina la clase añadida previamente al crear la variable imgCuadroAuxiliar
-  imgCuadroAuxiliar.classList.remove('prueba');
-  //recupera el elemento html seleccionado por id y le añade la clase prueba
-  document.getElementById(`img${imagen}`).classList.add('prueba');
+//elimina la clase añadida previamente al crear la variable imgBoxCarousel
+  imgBoxCarousel.classList.remove('imgSmallCarousel');
+  //recupera el elemento html seleccionado por id y le añade la clase imgSmallCarousel
+  document.getElementById(`img${image}`).classList.add('imgSmallCarousel');
   //guardo en la variable el nuevo elemento 
-  imgCuadroAuxiliar = document.getElementById(`img${imagen}`);
+  imgBoxCarousel = document.getElementById(`img${image}`);
 
 }
 
@@ -76,51 +74,51 @@ function setImagenPrincipal(imagen){
 
 // AÑADIR AL CARRITO
 
-let productos = document.querySelector('.textContainer__buttonContainer__icon__p').innerHTML = 0;
+let products = document.querySelector('.textContainer__buttonContainer__icon__p').innerHTML = 0;
 
 
 
-function anyadirProducto() {
-  productos = productos + 1;
-   document.querySelector('.textContainer__buttonContainer__icon__p').textContent = productos 
+function addProduct() {
+  products = products + 1;
+   document.querySelector('.textContainer__buttonContainer__icon__p').textContent = products 
 }
 
 
-function eliminarProducto() {
-  if (productos != 0) {
-    productos = productos - 1;
-    document.querySelector('.textContainer__buttonContainer__icon__p').textContent = productos
+function deleteProduct() {
+  if (products != 0) {
+    products = products - 1;
+    document.querySelector('.textContainer__buttonContainer__icon__p').textContent = products
   } 
 
 }
 
-function anyadirCarrito() {
+function addCart() {
   
-  carroCompra()
+  shopCart()
  
 }
 
 
 
-const carrito = document.querySelector('#carrito');
-const contenedorCarrito = document.querySelector('#lista-carrito');
-const vaciarCarritoBtn = document.querySelector('#vaciar-carrito');
-const anyadir = document.querySelector('#anyadirProducto');
+const cart = document.querySelector('#cart');
+const cartContainer = document.querySelector('#cart-list');
+const deleteCartContainerBtn = document.querySelector('#delete-cart');
+const add = document.querySelector('#addProduct');
 
 
-function carroCompra() {
-  let coste =  productos * 125;
-  if(productos > 0) {
+function shopCart() {
+  let cost =  products * 125;
+  if(products > 0) {
 
-    carrito.innerHTML = `
-    <p class="textoCosteCesta">Cesta</p>
-    <hr class="hrCesta">
-    <div class=containerCesta>
-    <img class="imgzapatillasCesta" src="./img/image-product-1-thumbnail.jpg" alt="">
-    <p class="textoCarrito">Fall Limited Edition Sneakers</p>
-    <img class="deleteCesta" src="./img/icon-delete.svg" alt="" ">
+    cart.innerHTML = `
+    <p class="textoCosteCesta">Bag</p>
+    <hr class="hrBag">
+    <div class=containerBag>
+    <img class="imgShoesBag" src="./img/image-product-1-thumbnail.jpg" alt="">
+    <p class="textCart">Fall Limited Edition Sneakers</p>
+    <img class="deleteBag" src="./img/icon-delete.svg" alt="" ">
     </div>
-    <span class="costeProductoCesta">$125.00 x ${productos}</span> <span class="costeTotal"> $${coste} </span>
+    <span class="costProductsBag">$125.00 x ${products}</span> <span class="totalCost"> $${cost} </span>
     `
   }
   
@@ -131,8 +129,8 @@ function carroCompra() {
 //ELIMINAR DE LA CESTA
 
 document.addEventListener("click", function(event){
-  if(event.target.className == "deleteCesta") {
-    carrito.innerHTML = '<p id="#lista-carrito">La cesta está vacía.</p>';
+  if(event.target.className == "deleteBag") {
+    cart.innerHTML = '<p id="#cart-list">The bag is empty.</p>';
   }
 })
 

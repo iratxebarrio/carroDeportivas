@@ -39,7 +39,7 @@ li {
     margin-left: 222px;
 }
 
-.header__iconos {
+.header__icons {
     margin-right: 137px;
     text-align: center;
     align-items: center;
@@ -47,11 +47,11 @@ li {
     
 }
 
-.header__iconos__carro {
+.header__icons__cart {
     margin-right: 40px;
 }
 
-.header__iconos__avatar {
+.header__icons__avatar {
     width: 60px;
 }
 
@@ -70,7 +70,7 @@ margin-top: 20px;
     position: relative;
 }
 
-.imgPrincipal__flechaIzq,.imgPrincipal__flechaDcha {
+.imgPrincipal__leftArrow,.imgPrincipal__leftRight {
     position: absolute;
     top: 50%;
     width: 50px;
@@ -83,11 +83,11 @@ margin-top: 20px;
     color:white
 }
 
-.imgPrincipal__flechaIzq {
+.imgPrincipal__leftArrow {
     left: 205px;
 }
 
-.imgPrincipal__flechaDcha {
+.imgPrincipal__leftRight {
     right: 205px;
 }
 
@@ -117,6 +117,9 @@ margin-top: 20px;
     border-radius: 10px;
     margin-right: 15px;
 }
+.imgCarousel > img:hover {
+    cursor: pointer;
+}
 
 .textContainer__title {
     text-transform: uppercase;
@@ -132,14 +135,14 @@ h1 {
     font-weight: bold;
 
 }
-.textContainer__texto {
+.textContainer__text {
     color: hsl(219, 9%, 45%);
     text-align: justify;
     width: 500px;
     line-height:25px
 }
 
-.textContainer__precio {
+.textContainer__price {
     display: flex;
     text-align: center;
     align-items: center;
@@ -147,13 +150,13 @@ h1 {
     
 }
 
-.textContainer__coste {
+.textContainer__cost {
     font-size: 30px;
     font-weight: bold;
     margin-right: 10px;
 }
 
-.textContainer__porcentaje {
+.textContainer__percentage {
     color: hsl(26, 100%, 55%);
     font-weight: bold;
     background-color: hsl(25, 100%, 94%);
@@ -163,7 +166,7 @@ h1 {
 
 }
 
-.textContainer__textoTachado {
+.textContainer__CrossedText {
     text-decoration: line-through;
     color: hsl(219, 9%, 45%);
     margin-bottom: 20px;
@@ -177,7 +180,7 @@ h1 {
 
 
 
-.textContainer__buttonContainer__boton {
+.textContainer__buttonContainer__btn {
     background-color: hsl(26, 100%, 55%);
     color: white;
     width: 250px;
@@ -188,10 +191,12 @@ h1 {
     justify-content: space-evenly;
     border: none;
     border-radius: 15px;
-   
+}
+.textContainer__buttonContainer__btn:hover {
+    cursor: pointer;
 }
 
-.textContainer__buttonContainer__boton__p {
+.textContainer__buttonContainer__btn__p {
     font-size: 15px;
     font-weight: bold;
 }
@@ -205,6 +210,9 @@ h1 {
     width: 200px;
     margin-right: 15px;
 }
+.textContainer__buttonContainer__icon:hover {
+    cursor: pointer;
+}
 
 .textContainer__buttonContainer__icon__divImg {
     width: 50px;
@@ -214,21 +222,21 @@ h1 {
     width: 70px;
 }
 
-.menosImg {
+.lessImg {
     margin-bottom: 5px;
 }
 
-.header__iconos__carroContainer {
+.header__icons__cartContainer {
   
     position: relative;
 }
 
-#carrito {
+#cart {
     display: none;
     
 }
 
-.header__iconos__carroContainer:hover #carrito {
+.header__icons__cartContainer:hover #cart {
     display: block;
     position: absolute;
     right:0;
@@ -236,17 +244,16 @@ h1 {
     background-color: white;
     min-height: 200px;
     min-width: 350px;
-    box-shadow: 0 10px 20px 5px grey;
-    
+    box-shadow: 0 10px 20px 5px grey; 
 }
 
 
 
-.costeTotal {
+.totalCost {
     font-weight: bold;
 }
 
-.containerCesta {
+.containerBag {
     display: flex;
     align-items: center;
     margin: 0 10px;
@@ -254,20 +261,20 @@ h1 {
    
 }
 
-.imgzapatillasCesta {
+.imgShoesBag {
     width: 50px;
     height: 50px;
     border-radius: 10px;
     margin-right: 10px;
 }
 
-.deleteCesta {
+.deleteBag {
     width: 20px;
     height: 20px;
     margin-left: 10px;
 }
 
-.textoCarrito, .costeProductoCesta {
+.textCart, .costProductsBag {
     font-size: 15px;
     color: hsl(219, 9%, 45%);
 }
@@ -277,14 +284,18 @@ h1 {
     justify-content: start;
 } 
 
-.hrCesta {
+.hrBag {
     margin-bottom: 5px;
     border: 0.5px solid grey;
 
 }
 
 
-.prueba {
+.imgSmallCarousel {
     border: 2px solid black;
     opacity: 0.5;
+}
+
+.btnRight, .btnLeft {
+    cursor: pointer;
 }
